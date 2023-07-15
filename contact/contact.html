@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+<div class="navbar">       
+         <img style="height: 40px;width: 50px;margin-bottom: 10px;" src="logo1.jpg" alt="">
+       
+        <input type="checkbox" id="nav-check">
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        <div class="nav-links">
+            <a style="color: white;" href="http://localhost/kvm/home/index.php">Home</a>
+            <a style="color: white;"  href="http://localhost/kvm/infrastructure/architecture.html">Infrastructure</a>
+		  <a style="color: white;"  href="http://localhost/kvm/extra_sports/extra.html">Extra curricular</a>
+		  <a style="color: white;"  href="http://localhost/kvm/extra_sports/sports.html">Sports</a>
+            <a style="color: white;"  href="http://localhost/kvm/Acadamic/academic_f.php">Academic Achievements</a>
+       
+           
+            <div class="dropdown">
+              <a style="color: white;"  class="dropBtn" href="#">General Details 
+                <i class="fa fa-angle-down"></i>
+              </a>
+              <div class="drop-content">
+                <a href="http://localhost/kvm/admin/calender.html">School Calendar</a>
+                <a href="http://localhost/kvm/Sports_achieve/sports.php">Sports Achievements</a>
+                <!-- <a href="#">Annual Report</a>
+                <a href="#">Book details</a> -->
+  
+       
+               
+                <div class="dropdown2">
+                  <a  class="dropBtn2" href="#">Faculties
+                    <i class="fa fa-angle-right"></i>
+                  </a>
+                  <div class="drop-content2">
+                    <a href="http://localhost/kvm/faculty/1.php">Tamil</a>
+                    <a href="http://localhost/kvm/faculty/2.php">English</a>
+                    <a href="http://localhost/kvm/faculty/3.php">Maths</a>
+                    <a href="http://localhost/kvm/faculty/5.php">Computer Science</a>
+                    <a href="http://localhost/kvm/faculty/4.php">Physics</a>
+  
+                  </div>
+                </div>
+              </div>
+            </div>
+       
+            <!-- <a style="color: white;"  href="#">Alumni</a> -->
+            <a style="color: white;"  href="http://localhost/kvm/Alumini/Alumini.php">Alumni</a>
+            <a style="color: white;"  href="http://localhost/kvm/contact/contact.html">Contacts</a>
+            <a style="color: white;" href="http://localhost/kvm/admission_form/admission.php">Admission Form</a>
+          </div>
+    <div class="contactUs">
+        <div class="title">
+            <h2></h2>
+        </div>
+        <div class="box">
+            <!--Form Box-->
+            <div class="contact form">
+                <h3>Fill your details</h3>
+                <form id="contactForm" action="https://formsubmit.co/1bd1aeca9ac1ff5af6f6319d78539428" method="POST">
+                    <div class="formBox">
+                        <div class="row50">
+                            <div class="inputBox">
+                                <span>First Name</span>
+                                <input type="text" name="f_name">
+                            </div>
+                            <div class="inputBox">
+                                <span>Last Name</span>
+                                <input type="text" name="l_name">
+                            </div>
+                        </div>
+                        <div class="row50">
+                            <div class="inputBox">
+                                <span>Email</span>
+                                <input type="text" name="email">
+                            </div>
+                            <div class="inputBox">
+                                <span>Phone</span>
+                                <input type="number" name="phone">
+                            </div>
+                        </div>
+                        <div class="row100">
+                            <div class="inputBox">
+                                <span>Enter your Message</span>
+                                <textarea name="message" placeholder="Any comments..."></textarea>
+                            </div>
+                        </div>
+                        <div class="row100">
+                            <div class="inputBox">
+                                <input type="submit" value="Send">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <!--Info Box-->
+            <div class="contact info">
+                <h3>Contact Us</h3>
+                <div class="infoBox">
+                    <div>
+                        <span><ion-icon name="location"></ion-icon></span>
+                        <p>KVM <br>Perundurai</p>
+                    </div>
+                    <div>
+                        <span><ion-icon name="mail"></ion-icon></span>
+                        <a href="kvm@gmail.com">kvmhsspri@gmail.com</a>
+                    </div>
+                    <div>
+                        <span><ion-icon name="call"></ion-icon></span>
+                        <a href="ph:+91 7648934352">+91 7648934352</a>
+                    </div>
+                    <!--Social Media Links-->
+                    <ul class="sci">
+                        <li><a href="https://m.facebook.com/profile.php?id=128769450605264"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                        <li><a href="https://www.instagram.com/kvmhss_pri/?hl=en"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                        <li><a href="https://www.linkedin.com/in/kvm/"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                        <li><a href="https://twitter.com/kvm"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>    
+</body>
+</html>

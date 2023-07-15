@@ -1,0 +1,273 @@
+/* html, body {
+    min-height: 100%;
+    } */
+    div, form, input, select, p { 
+    padding: 100;
+    margin-top: 100;
+     outline: none; 
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 16px;
+    color: #eee;
+   
+    }
+    body {
+    /* background: url("img1.jpg") no-repeat center;  */
+    background-size: cover;
+    }
+    h1, h2 {
+    text-transform: uppercase;
+    font-weight: 400;
+    }
+    h2 {
+    margin: 0 0 0 8px;
+    }
+    .main-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 25px;
+    background: #4070F4; 
+    }
+    .left-part, form {
+    padding: 25px;
+    }
+    .left-part {
+    text-align: center;
+    }
+    .fa-graduation-cap {
+    font-size: 72px;
+    }
+    form {
+    background: black; 
+    }
+    .title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    }
+    .info {
+    display: flex;
+    flex-direction: column;
+    }
+    input, select {
+    padding: 5px;
+    margin-bottom: 30px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #eee;
+    }
+    input::placeholder {
+    color: #eee;
+    }
+    option:focus {
+    border: none;
+    }
+    option {
+    background: black; 
+    border: none;
+    }
+    .checkbox input {
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+    }
+    .checkbox a {
+    color: #26a9e0;
+    }
+    .checkbox a:hover {
+    color: #85d6de;
+    }
+    .btn-item, button {
+    padding: 10px 5px;
+    margin-top: 20px;
+    border-radius: 5px; 
+    border: none;
+    background: #26a9e0; 
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    }
+    .btn-item {
+    display: inline-block;
+    margin: 20px 5px 0;
+    }
+    button {
+    width: 100%;
+    }
+    button:hover, .btn-item:hover {
+    background: #85d6de;
+    }
+    @media (min-width: 568px) {
+    html, body {
+    height: 100%;
+    }
+    .main-block {
+    flex-direction: row;
+    height: calc(100% - 50px);
+    }
+    .left-part, form {
+    flex: 1;
+    height: auto;
+    }
+    }
+
+
+    .navbar{
+        height: 70px;
+        width: 100%;
+        padding: 19px 30px;
+        background-color: #4070F4;
+        position: relative;
+      }
+      .navbar .nav-header{
+        display: inline;
+      }
+      .navbar .nav-header .nav-logo{
+        display: inline-block;
+        margin-top: -7px;
+      }
+      .navbar .nav-links{
+        display: inline;
+        float: right;
+        font-size: 18px;
+      }
+       
+      .navbar .nav-links .loginBtn{
+        display: inline-block;
+        padding: 5px 15px;
+        margin-left: 20px;
+        font-size: 17px;
+        color: rgb(9, 14, 90);
+      }
+      .navbar .nav-links a {
+        padding: 10px 12px;
+        text-decoration: none;
+        font-weight: 550;
+        color:#515354;
+      }
+      /* Hover effects */
+      .navbar .nav-links a:hover{
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+       
+      /* responsive navbar toggle button */
+      .navbar #nav-check, .navbar .nav-btn{
+        display: none;
+      }
+       
+      @media (max-width:1200px) {
+        .navbar .nav-btn{
+          display: inline-block;
+          position: absolute;
+          top: 0px;
+          right: 0px;
+        }
+        .navbar .nav-btn label {
+          display: inline-block;
+          width: 80px;
+          height: 70px;
+          padding: 25px;
+        }
+        .navbar .nav-btn label span {
+          display: block;
+          height: 10px;
+          width: 25px;
+          border-top: 3px solid #eee;
+        }
+        .navbar .nav-btn label:hover, .navbar #nav-check:checked ~ .nav-btn label {
+          background-color: rgb(9, 14, 90);
+          transition: all 0.5s ease;
+        }
+        .navbar .nav-links{
+          position: absolute;
+          display: block;
+          text-align: center;
+          width: 50%;
+          background-color:#4070F4;
+          transition: all 0.3s ease-in;
+          overflow-y: hidden;
+          top: 70px;
+          right: 0px;
+          z-index: 2;
+        }
+        .navbar .nav-links a {
+          display: block;
+        }
+       
+        /* when nav toggle button not checked */
+        .navbar #nav-check:not(:checked) ~ .nav-links {
+          height: 0px;
+        }
+       
+        /* when nav toggle button is checked */
+        .navbar #nav-check:checked ~ .nav-links {
+          height: calc(100vh - 70px);
+          overflow-y: auto;
+        }
+        .navbar .nav-links .loginBtn {
+          padding: 10px 40px ;
+          margin: 20px;
+          font-size:  18px;
+          font-weight: bold;
+          color: rgb(9, 14, 90);
+        }
+        /* Responsive dropdown code */
+        .navbar .nav-links .dropdown, .navbar .nav-links .dropdown2 {
+          float: none;
+          width: 100%;
+        }
+        .navbar .nav-links .drop-content, .navbar .nav-links .drop-content2 {
+          position: relative;
+          background-color: rgb(220, 220, 250);
+          top: 0px;
+          left: 0px;
+        }
+        /* Text color */
+        .navbar .nav-links .drop-content a {
+          color: rgb(9, 14, 90);
+        }  
+       
+      }
+       
+      /* Dropdown menu CSS code */
+      .dropdown{
+        position: relative;
+        display: inline-block;
+      }
+      .drop-content, .drop-content2 {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        min-width: 120px;
+        font-size: 16px;
+        top: 34px;
+        z-index: 2;
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
+      }
+      /* on hover show dropdown */
+      .dropdown:hover .drop-content, .dropdown2:hover .drop-content2 {
+        display: block;
+      }
+      /* drondown links */
+      .drop-content a {
+        padding: 12px 10px;
+        border-bottom: 1px solid rgb(197, 197, 250);
+        display: block;
+        transition: all 0.5s ease !important;
+      }
+      .dropBtn .drop-content a:hover {
+        background-color: rgb(230, 230, 230);
+      }
+      .dropdown:hover .dropBtn, .dropdown2:hover .dropBtn2 {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+      .dropdown2 .drop-content2 {
+        position: absolute;
+        left: 120px;
+        top: 126px;
+      }
+      .dropBtn2 i {
+        margin-left: 15px;
+      }

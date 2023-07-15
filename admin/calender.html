@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>KVMHSS CALENDER</title>
+<!-- *Note: You must have internet connection on your laptop or pc other wise below code is not working -->
+<!-- CSS for full calender -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" rel="stylesheet" />
+<!-- JS for jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- JS for full calender -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+<!-- bootstrap css and js -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../home/CSS/architecture.css">
+
+<script>
+    $(document).ready(function() {
+        display_events();
+    }); //end document.ready block
+    
+    function display_events() {
+        var events = new Array();
+    $.ajax({
+        url: 'display_event.php',  
+        dataType: 'json',
+        success: function (response) {
+             
+        var result=response.data;
+        $.each(result, function (i, item) {
+            events.push({
+                event_id: result[i].event_id,
+                title: result[i].title,
+                start: result[i].start,
+                end: result[i].end,
+                color: result[i].color,
+                // url: result[i].url
+            }); 	
+        })
+        var calendar = $('#calendar').fullCalendar({
+            defaultView: 'month',
+             timeZone: 'local',
+            editable: true,
+            selectable: true,
+            selectHelper: true,
+            select: function(start, end) {
+                    //alert(start);
+                    //alert(end);
+                    $('#event_start_date').val(moment(start).format('YYYY-MM-DD'));
+                    $('#event_end_date').val(moment(end).format('YYYY-MM-DD'));
+                    $('#event_entry_modal').modal('show');
+                },
+            events: events,
+            // eventRender: function(event, element, view) { 
+            //     element.bind('click', function() {
+            //             alert(event.event_id);
+            //         });
+            // }
+            }); //end fullCalendar block	
+          },//end success block
+          error: function (xhr, status) {
+          alert(response.msg);
+          }
+        });//end ajax block	
+    }
+    </script>
+</head>
+<body>
+
+    <div class="navbar">
+ 
+        <!-- Navbar logo -->
+        <!-- <div class="nav-header">
+          <div class="nav-logo">
+            <a href="#">
+              <img src="logo1.jpg" width="100px" alt="logo">
+            </a>
+          </div>
+        </div>
+      -->
+         <!-- <h4 style="color: var(--bs-orange);">KVM</h4> -->
+         <img style="height: 40px;width: 50px;margin-bottom: 10px;" src="logo1.jpg" alt="">
+        <!-- responsive navbar toggle button -->
+        <input type="checkbox" id="nav-check">
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+     
+        <!-- Navbar items -->
+        <div class="nav-links">
+          <a style="color: white;" href="http://localhost/kvm/home/index.php">Home</a>
+          <a style="color: white;"  href="http://localhost/kvm/infrastructure/architecture.html">Infrastructure</a>
+		  <a style="color: white;"  href="http://localhost/kvm/extra_sports/extra.html">Extra curricular</a>
+		  <a style="color: white;"  href="http://localhost/kvm/extra_sports/sports.html">Sports</a>
+          <a style="color: white;"  href="http://localhost/kvm/Acadamic/academic_f.php">Academic Achievements</a>
+       
+         
+          <div class="dropdown">
+          <a style="color: white;"  class="dropBtn" href="#">General Details 
+            <i class="fa fa-angle-down"></i>
+          </a>
+          <div class="drop-content">
+            <a href="http://localhost/kvm/admin/calender.html">School Calendar</a>
+            <a href="http://localhost/kvm/Sports_achieve/sports.php">Sports Achievements</a>
+            <!-- <a href="#">Annual Report</a>
+            <a href="#">Book details</a> -->
+    
+       
+           
+            <div class="dropdown2">
+            <a  class="dropBtn2" href="#">Faculties
+              <i class="fa fa-angle-right"></i>
+            </a>
+            <div class="drop-content2">
+              <a href="http://localhost/kvm/faculty/1.php">Tamil</a>
+              <a href="http://localhost/kvm/faculty/2.php">English</a>
+              <a href="http://localhost/kvm/faculty/3.php">Maths</a>
+              <a href="http://localhost/kvm/faculty/5.php">Computer Science</a>
+              <a href="http://localhost/kvm/faculty/4.php">Physics</a>
+    
+            </div>
+            </div>
+          </div>
+          </div>
+       
+          <!-- <a style="color: white;"  href="#">Alumni</a> -->
+          <a style="color: white;"  href="http://localhost/kvm/Alumini/Alumini.php">Alumni</a>
+          <a style="color: white;"  href="http://localhost/kvm/contact/contact.html">Contacts</a>
+          <a style="color: white;" href="http://localhost/kvm/admission_form/admission.php">Admission Form</a>
+        </div>
+     
+      </div>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<div id="calendar"></div>
+		</div>
+	</div>
+</div>
+<br>
+<footer class="text-center text-lg-start bg-primary py-3 text-white" style="background-color: #4070F4; margin-top: 50px;">
+      
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            
+            <div class="row mt-3">
+               
+                <!-- <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4"> -->
+                    
+                    <p>
+                      Kongu Vellalar Matriculation Higher Secondary School  
+                    </p>
+                    <p>
+                        Perundurai , 638 052,Erode District
+                    </p>
+                    <p>
+                        Ph:(04294) Prinicipal:220650 Office:220090 
+                      </p>
+                      <p>
+                       E-mail:kvmhsspri@gmail.com
+                      </p>
+            </div>
+        </div>
+    </section>
+</footer>
+</body>
+
+</html> 
